@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .transition-all-300 {
+                transition: all 0.3s ease;
+            }
+            .animate-fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+            .animate-slide-up {
+                animation: slideUp 0.8s ease-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes slideUp {
+                from { 
+                    opacity: 0; 
+                    transform: translateY(30px); 
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateY(0); 
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">个人主页</a>
+            
+            <!-- 桌面端导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-primary transition-all-300">首页</a>
+                <a href="#about" class="hover:text-primary transition-all-300">关于我</a>
+                <a href="#projects" class="hover:text-primary transition-all-300">作品</a>
+                <a href="#contact" class="hover:text-primary transition-all-300">联系我</a>
+            </div>
+            
+            <!-- 移动端汉堡菜单 -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-dark focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+                <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                    <a href="#home" class="hover:text-primary transition-all-300 py-2">首页</a>
+                    <a href="#about" class="hover:text-primary transition-all-300 py-2">关于我</a>
+                    <a href="#projects" class="hover:text-primary transition-all-300 py-2">作品</a>
+                    <a href="#contact" class="hover:text-primary transition-all-300 py-2">联系我</a>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Banner区域 -->
+    <section id="home" class="h-screen flex items-center justify-center bg-gradient-to-r from-primary/90 to-primary/70 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow animate-fade-in">张辉</h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow">研发测试工程师</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#about" class="bg-white text-primary font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-all-300 transform hover:scale-105">了解更多</a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white font-medium py-3 px-8 rounded-full hover:bg-white hover:text-primary transition-all-300 transform hover:scale-105">联系我</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我区域 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">关于我</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- 头像 -->
+                <div class="w-64 h-64 mx-auto md:mx-0 rounded-full overflow-hidden shadow-lg">
+                    <img src="侧面照.webp" alt="个人头像" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- 个人简介 -->
+                <div class="flex-1">
+                    <h3 class="text-2xl font-semibold mb-4">你好，我是张辉</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">拥有多年屏幕供应商研发、智能终端硬件研发测试经验。</p>
+                    
+                    <!-- 技能标签 -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">PMP</span>
+                        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">AutoCAD</span>
+                        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">UG</span>
+                        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Solidworks</span>
+                        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Office软件</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品区域 -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">我的作品</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 作品卡片 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all-300 hover:shadow-xl transform hover:scale-105">
+                    <div class="h-48 bg-gray-200">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20software%20development%20project%20screenshot%2C%20clean%20interface%2C%20modern%20design&image_size=landscape_4_3" alt="项目截图" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">屏幕供应商研发项目</h3>
+                        <p class="text-secondary mb-4">负责屏幕技术研发和测试，优化显示效果和性能</p>
+                        <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                            查看详情
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 作品卡片 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all-300 hover:shadow-xl transform hover:scale-105">
+                    <div class="h-48 bg-gray-200">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=hardware%20testing%20equipment%20interface%2C%20professional%20dashboard%2C%20modern%20design&image_size=landscape_4_3" alt="项目截图" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">智能终端硬件测试平台</h3>
+                        <p class="text-secondary mb-4">开发自动化测试系统，提高测试效率和准确性</p>
+                        <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                            查看详情
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 作品卡片 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all-300 hover:shadow-xl transform hover:scale-105">
+                    <div class="h-48 bg-gray-200">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=project%20management%20dashboard%2C%20professional%20interface%2C%20modern%20design&image_size=landscape_4_3" alt="项目截图" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">项目管理系统</h3>
+                        <p class="text-secondary mb-4">使用Python开发的项目管理工具，提升团队协作效率</p>
+                        <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                            查看详情
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系表单 -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">联系我</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">姓名</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300" placeholder="请输入您的姓名">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="name-error">请输入姓名</p>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">邮箱</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300" placeholder="请输入您的邮箱">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="email-error">请输入有效的邮箱地址</p>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">留言</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300" placeholder="请输入您的留言"></textarea>
+                        <p class="text-red-500 text-sm mt-1 hidden" id="message-error">请输入留言内容</p>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-all-300 transform hover:scale-105">提交</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">联系邮箱：877901073@qq.com</p>
+            <p class="mb-2">联系电话：18861823348</p>
+            <p>&copy; 2026 个人主页. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 汉堡菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // 表单验证
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // 验证姓名
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('name-error');
+            if (!name.value.trim()) {
+                nameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+            
+            // 验证邮箱
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRegex.test(email.value)) {
+                emailError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+            
+            // 验证留言
+            const message = document.getElementById('message');
+            const messageError = document.getElementById('message-error');
+            if (!message.value.trim()) {
+                messageError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                messageError.classList.add('hidden');
+            }
+            
+            if (isValid) {
+                // 模拟表单提交
+                alert('留言已提交，感谢您的联系！');
+                this.reset();
+            }
+        });
+
+        // 滚动动画
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
