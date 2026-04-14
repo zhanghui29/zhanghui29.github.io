@@ -142,7 +142,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">显示技术研发</h3>
                         <p class="text-secondary mb-4">负责OLED发光材料体系开发，优化显示效果和性能</p>
-                        <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                        <a href="#" id="tech-detail-link" class="text-primary hover:underline font-medium flex items-center">
                             查看详情
                             <i class="fa fa-arrow-right ml-2"></i>
                         </a>
@@ -157,7 +157,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">医疗器械研发</h3>
                         <p class="text-secondary mb-4">介植入三类医疗器械工艺开发，确保产品质量和安全性</p>
-                        <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                        <a href="#" id="medical-detail-link" class="text-primary hover:underline font-medium flex items-center">
                             查看详情
                             <i class="fa fa-arrow-right ml-2"></i>
                         </a>
@@ -172,7 +172,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">智能终端研发测试</h3>
                         <p class="text-secondary mb-4">手机、平板硬件测试，确保产品质量和用户体验</p>
-                        <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                        <a href="#" id="smart-detail-link" class="text-primary hover:underline font-medium flex items-center">
                             查看详情
                             <i class="fa fa-arrow-right ml-2"></i>
                         </a>
@@ -232,6 +232,86 @@
         </div>
     </section>
 
+    <!-- 显示技术研发详情模态框 -->
+    <div id="tech-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold">显示技术研发详情</h3>
+                    <button class="close-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    <p class="text-secondary leading-relaxed">1、负责蒸镀实验线管理运营，包括2条蒸镀线的设备管控，内外部实验需求合理规划，下属员⼯（⼀线和技术员）管理；</p>
+                    <p class="text-secondary leading-relaxed">2、完成4代OLED器件新材料体系的中试线导⼊，解决TEG/Panel器件性能问题，包括寿命、电压、效率、⿊斑等问题排查分析，采取相应改善措施，输出改善报告；</p>
+                    <p class="text-secondary leading-relaxed">3、主导完成清洗机和蒸镀机的设备&⼯艺改善，包括蒸镀设备升级改造，良率改善等项⽬的计划、实施、结果产出；</p>
+                    <p class="text-secondary leading-relaxed">4、负责新规划清洗/蒸镀/封装实验设备的评估、⽴项、搬⼊、调试、验收等相关⼯作；</p>
+                </div>
+            </div>
+            <div class="p-6 border-t">
+                <button class="close-modal-btn w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-all-300">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 医疗器械研发详情模态框 -->
+    <div id="medical-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold">医疗器械研发详情</h3>
+                    <button class="close-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    <p class="text-secondary leading-relaxed">1、心脑血管及外周介入的导管等产品的开发设计，包括竞品剖析测绘，新品三维建模输出工程图，编写相关技术文档；</p>
+                    <p class="text-secondary leading-relaxed">2、负责新产品的样品制作，配合注册部和市场部送样检测，跟进处理样品全性能检测异常等问题；</p>
+                    <p class="text-secondary leading-relaxed">3、关键及特殊工序的工艺验证，编制相关工艺SOP，组织培训生产人员，完成新开发产品的转产；</p>
+                </div>
+            </div>
+            <div class="p-6 border-t">
+                <button class="close-modal-btn w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-all-300">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 智能终端研发测试详情模态框 -->
+    <div id="smart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold">智能终端研发测试详情</h3>
+                    <button class="close-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    <p class="text-secondary leading-relaxed">1、主导显示触控测试能⼒建设，包括实验室环境搭建、设备采购、自动化测试工具开发(python)、验收测试落地等工作，实现从0到1，拓展硬测覆盖度，并获得小⽶集团23年“⻘年⼯程师”荣誉和RSU激励；</p>
+                    <p class="text-secondary leading-relaxed">2、负责小米数字系列、红米、Civi项目交付测试端到端看护，制定测试计划并执行，覆盖显示效果、光学、可靠性、触控、ESD、基带板级、安卓&UI系统性能测试、专项测试等，输出测试报告及结论，推进测试问题解决；</p>
+                    <p class="text-secondary leading-relaxed">3、参与手机&平板项目全生命测试体系完善，OLED&LCD验收测试标准拉通、策略制定、NUDD分析、用例刷新、测试⽅案拟定、测试报告输出、IPD节点评审报告等，实现项目高效高质交付；</p>
+                    <p class="text-secondary leading-relaxed">4、团队建设，包括测试人员能力培养、测试环境对标、实验室5S管理、设备维保、耗材采购等，保障测试交付能力；</p>
+                </div>
+            </div>
+            <div class="p-6 border-t">
+                <button class="close-modal-btn w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-all-300">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-8">
         <div class="container mx-auto px-4 text-center">
@@ -279,6 +359,48 @@
                 nav.classList.add('py-3');
                 nav.classList.remove('py-2');
             }
+        });
+
+        // 显示技术研发详情模态框
+        document.getElementById('tech-detail-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('tech-modal').classList.remove('hidden');
+        });
+
+        // 显示医疗器械研发详情模态框
+        document.getElementById('medical-detail-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('medical-modal').classList.remove('hidden');
+        });
+
+        // 显示智能终端研发测试详情模态框
+        document.getElementById('smart-detail-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('smart-modal').classList.remove('hidden');
+        });
+
+        // 关闭模态框 - 使用类选择器处理所有模态框
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.fixed');
+                modal.classList.add('hidden');
+            });
+        });
+
+        document.querySelectorAll('.close-modal-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.fixed');
+                modal.classList.add('hidden');
+            });
+        });
+
+        // 点击模态框外部关闭 - 处理所有模态框
+        document.querySelectorAll('.fixed').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
         });
     </script>
 </body>
