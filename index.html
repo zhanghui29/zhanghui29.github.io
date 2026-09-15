@@ -77,6 +77,7 @@
             <div class="hidden md:flex space-x-8 text-sm font-medium text-secondary">
                 <a href="#home" class="hover:text-primary transition-all-300">首页</a>
                 <a href="#about" class="hover:text-primary transition-all-300">关于我</a>
+                <a href="#education" class="hover:text-primary transition-all-300">教育认证</a>
                 <a href="#projects" class="hover:text-primary transition-all-300">履历</a>
                 <a href="#contact" class="hover:text-primary transition-all-300">联系我</a>
             </div>
@@ -92,6 +93,7 @@
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-1 text-sm font-medium text-secondary">
                 <a href="#home" class="hover:text-primary transition-all-300 py-2">首页</a>
                 <a href="#about" class="hover:text-primary transition-all-300 py-2">关于我</a>
+                <a href="#education" class="hover:text-primary transition-all-300 py-2">教育认证</a>
                 <a href="#projects" class="hover:text-primary transition-all-300 py-2">履历</a>
                 <a href="#contact" class="hover:text-primary transition-all-300 py-2">联系我</a>
             </div>
@@ -125,8 +127,7 @@
                 
                 <div class="flex-1">
                     <h3 class="text-2xl font-semibold mb-4 text-dark">你好，我是张辉</h3>
-                    <p class="text-secondary mb-4 leading-relaxed">拥有 OLED 显示材料研发、医疗器械工艺开发及智能终端硬件测试经验。曾在天马微电子、康德莱医疗器械、小米科技从事研发与质量验证工作，现任上海流澜数智硬件测试负责人，负责测试团队与质量体系建设，覆盖硬件、软件及系统级测试。</p>
-                    <p class="text-secondary mb-8 leading-relaxed">教育背景：<img src="校徽.png" alt="江南大学校徽" class="inline-block w-6 h-6 mr-2 align-middle"> <a href="https://www.jiangnan.edu.cn/" target="_blank" class="text-primary hover:underline font-medium">江南大学</a> 机械工程</p>
+                    <p class="text-secondary mb-8 leading-relaxed">拥有 OLED 显示材料研发、医疗器械工艺开发及智能终端硬件测试经验。曾在天马微电子、康德莱医疗器械、小米科技从事研发与质量验证工作，现任上海流澜数智硬件测试负责人，负责测试团队与质量体系建设，覆盖硬件、软件及系统级测试。</p>
                     
                     <div class="flex flex-wrap gap-2.5">
                         <span class="bg-teal-50 text-teal-800 border border-teal-100 px-3.5 py-1.5 rounded-md text-sm font-medium">测试体系搭建</span>
@@ -143,8 +144,45 @@
         </div>
     </section>
 
+    <!-- 教育与认证 -->
+    <section id="education" class="py-20 md:py-24 bg-light">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">教育与认证</h2>
+            <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl border border-slate-200/80 p-6 md:p-8 transition-all-300 hover:border-primary/40 hover:shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-teal-50 border border-teal-100 rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                            <img src="校徽.png" alt="江南大学校徽" class="w-8 h-8 object-contain">
+                        </div>
+                        <div>
+                            <p class="text-sm text-primary font-medium mb-1">教育</p>
+                            <h3 class="text-xl font-semibold text-dark mb-1">江南大学</h3>
+                            <p class="text-secondary mb-1">机械工程 · 本科</p>
+                            <p class="text-sm text-secondary">2013 – 2017</p>
+                            <a href="https://www.jiangnan.edu.cn/" target="_blank" class="inline-block mt-3 text-sm text-primary hover:underline font-medium">访问官网</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-slate-200/80 p-6 md:p-8 transition-all-300 hover:border-primary/40 hover:shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-teal-50 border border-teal-100 rounded-md flex items-center justify-center shrink-0">
+                            <i class="fa fa-certificate text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-primary font-medium mb-1">认证</p>
+                            <h3 class="text-xl font-semibold text-dark mb-1">PMP</h3>
+                            <p class="text-secondary mb-1">项目管理专业人士认证</p>
+                            <p class="text-sm text-secondary">2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 履历区域 -->
-    <section id="projects" class="py-20 md:py-24 bg-light">
+    <section id="projects" class="py-20 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">我的履历</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -221,11 +259,11 @@
     </section>
 
     <!-- 联系方式 -->
-    <section id="contact" class="py-20 md:py-24 bg-white">
+    <section id="contact" class="py-20 md:py-24 bg-light">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">我的联系方式</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
-            <div class="max-w-xl mx-auto bg-light border border-slate-200/80 p-8 md:p-10 rounded-xl">
+            <div class="max-w-xl mx-auto bg-white border border-slate-200/80 p-8 md:p-10 rounded-xl">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-4">
                         <div class="w-11 h-11 bg-white border border-slate-200 rounded-md flex items-center justify-center shrink-0">
