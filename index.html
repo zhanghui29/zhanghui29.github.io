@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>张辉｜硬件测试负责人</title>
+    <meta name="description" content="张辉，硬件测试负责人。具备 OLED 显示研发、智能终端硬件测试与测试体系建设经验，现任上海流澜数智硬件测试负责人。">
+    <meta property="og:title" content="张辉｜硬件测试负责人">
+    <meta property="og:description" content="具备 OLED 显示研发、智能终端硬件测试与测试体系建设经验，现任上海流澜数智硬件测试负责人。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zhanghui29.github.io/">
+    <meta property="og:image" content="https://zhanghui29.github.io/%E4%BE%A7%E9%9D%A2%E7%85%A7.webp">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="张辉｜硬件测试负责人">
+    <meta name="twitter:description" content="具备 OLED 显示研发、智能终端硬件测试与测试体系建设经验，现任上海流澜数智硬件测试负责人。">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
         if (window.location.protocol === 'http:') {
             window.location.href = window.location.href.replace('http:', 'https:');
@@ -26,7 +33,7 @@
                         surface: '#FFFFFF'
                     },
                     fontFamily: {
-                        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif']
+                        sans: ['"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', '"Noto Sans SC"', 'system-ui', 'sans-serif']
                     }
                 }
             }
@@ -50,6 +57,18 @@
                     linear-gradient(90deg, rgba(20, 184, 166, 0.08) 1px, transparent 1px),
                     radial-gradient(ellipse at top, rgba(20, 184, 166, 0.18), transparent 55%);
                 background-size: 48px 48px, 48px 48px, 100% 100%;
+            }
+            .nav-link.active {
+                color: #14B8A6;
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(28px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
             }
             @keyframes fadeIn {
                 from { opacity: 0; }
@@ -75,11 +94,11 @@
             <a href="#home" class="text-xl font-bold tracking-wide text-dark">张辉</a>
             
             <div class="hidden md:flex space-x-8 text-sm font-medium text-secondary">
-                <a href="#home" class="hover:text-primary transition-all-300">首页</a>
-                <a href="#about" class="hover:text-primary transition-all-300">关于我</a>
-                <a href="#education" class="hover:text-primary transition-all-300">教育认证</a>
-                <a href="#projects" class="hover:text-primary transition-all-300">履历</a>
-                <a href="#contact" class="hover:text-primary transition-all-300">联系我</a>
+                <a href="#home" class="nav-link hover:text-primary transition-all-300">首页</a>
+                <a href="#about" class="nav-link hover:text-primary transition-all-300">关于我</a>
+                <a href="#education" class="nav-link hover:text-primary transition-all-300">教育认证</a>
+                <a href="#projects" class="nav-link hover:text-primary transition-all-300">履历</a>
+                <a href="#contact" class="nav-link hover:text-primary transition-all-300">联系我</a>
             </div>
             
             <div class="md:hidden">
@@ -91,11 +110,11 @@
         
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-1 text-sm font-medium text-secondary">
-                <a href="#home" class="hover:text-primary transition-all-300 py-2">首页</a>
-                <a href="#about" class="hover:text-primary transition-all-300 py-2">关于我</a>
-                <a href="#education" class="hover:text-primary transition-all-300 py-2">教育认证</a>
-                <a href="#projects" class="hover:text-primary transition-all-300 py-2">履历</a>
-                <a href="#contact" class="hover:text-primary transition-all-300 py-2">联系我</a>
+                <a href="#home" class="nav-link hover:text-primary transition-all-300 py-2">首页</a>
+                <a href="#about" class="nav-link hover:text-primary transition-all-300 py-2">关于我</a>
+                <a href="#education" class="nav-link hover:text-primary transition-all-300 py-2">教育认证</a>
+                <a href="#projects" class="nav-link hover:text-primary transition-all-300 py-2">履历</a>
+                <a href="#contact" class="nav-link hover:text-primary transition-all-300 py-2">联系我</a>
             </div>
         </div>
     </nav>
@@ -116,7 +135,7 @@
     </section>
 
     <!-- 关于我区域 -->
-    <section id="about" class="py-20 md:py-24 bg-white">
+    <section id="about" class="py-20 md:py-24 bg-white reveal">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">关于我</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -145,7 +164,7 @@
     </section>
 
     <!-- 教育与认证 -->
-    <section id="education" class="py-20 md:py-24 bg-light">
+    <section id="education" class="py-20 md:py-24 bg-light reveal">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">教育与认证</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -183,7 +202,7 @@
     </section>
 
     <!-- 履历区域 -->
-    <section id="projects" class="py-20 md:py-24 bg-white">
+    <section id="projects" class="py-20 md:py-24 bg-white reveal">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">我的履历</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -260,7 +279,7 @@
     </section>
 
     <!-- 联系方式 -->
-    <section id="contact" class="py-20 md:py-24 bg-light">
+    <section id="contact" class="py-20 md:py-24 bg-light reveal">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">我的联系方式</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -344,11 +363,31 @@
                 </div>
             </div>
             <div class="p-6">
-                <div class="space-y-4">
-                    <p class="text-secondary leading-relaxed">1、负责蒸镀实验线管理运营，包括2条蒸镀线的设备管控，内外部实验需求合理规划，下属员⼯（⼀线和技术员）管理；</p>
-                    <p class="text-secondary leading-relaxed">2、完成4代OLED器件新材料体系的中试线导⼊，解决TEG/Panel器件性能问题，包括寿命、电压、效率、⿊斑等问题排查分析，采取相应改善措施，输出改善报告；</p>
-                    <p class="text-secondary leading-relaxed">3、主导完成清洗机和蒸镀机的设备&⼯艺改善，包括蒸镀设备升级改造，良率改善等项⽬的计划、实施、结果产出；</p>
-                    <p class="text-secondary leading-relaxed">4、负责新规划清洗/蒸镀/封装实验设备的评估、⽴项、搬⼊、调试、验收等相关⼯作；</p>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-dark font-medium mb-2">1、负责蒸镀实验线管理运营</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>包括2条蒸镀线的设备管控，内外部实验需求合理规划，下属员工（一线和技术员）管理。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">2、完成4代OLED器件新材料体系的中试线导入</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>解决TEG/Panel器件性能问题，包括寿命、电压、效率、黑斑等问题排查分析，采取相应改善措施，输出改善报告。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">3、主导完成清洗机和蒸镀机的设备与工艺改善</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>包括蒸镀设备升级改造、良率改善等项目的计划、实施与结果产出。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">4、负责新规划清洗/蒸镀/封装实验设备相关工作</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>评估、立项、搬入、调试、验收等相关工作。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="p-6 border-t border-slate-100">
@@ -371,10 +410,25 @@
                 </div>
             </div>
             <div class="p-6">
-                <div class="space-y-4">
-                    <p class="text-secondary leading-relaxed">1、心脑血管及外周介入的导管等产品的开发设计，包括竞品剖析测绘，新品三维建模输出工程图，编写相关技术文档；</p>
-                    <p class="text-secondary leading-relaxed">2、负责新产品的样品制作，配合注册部和市场部送样检测，跟进处理样品全性能检测异常等问题；</p>
-                    <p class="text-secondary leading-relaxed">3、关键及特殊工序的工艺验证，编制相关工艺SOP，组织培训生产人员，完成新开发产品的转产；</p>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-dark font-medium mb-2">1、心脑血管及外周介入导管等产品的开发设计</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>包括竞品剖析测绘，新品三维建模输出工程图，编写相关技术文档。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">2、负责新产品的样品制作</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>配合注册部和市场部送样检测，跟进处理样品全性能检测异常等问题。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">3、关键及特殊工序的工艺验证</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>编制相关工艺SOP，组织培训生产人员，完成新开发产品的转产。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="p-6 border-t border-slate-100">
@@ -397,11 +451,33 @@
                 </div>
             </div>
             <div class="p-6">
-                <div class="space-y-4">
-                    <p class="text-secondary leading-relaxed">1、主导显示触控测试能⼒建设，包括实验室环境搭建、设备采购、自动化测试工具开发(python)、验收测试落地等工作，实现从0到1，拓展硬测覆盖度，并获得小⽶集团23年“⻘年⼯程师”荣誉和RSU激励；</p>
-                    <p class="text-secondary leading-relaxed">2、负责小米数字系列、红米、Civi项目交付测试端到端看护，制定测试计划并执行，覆盖显示效果、光学、可靠性、触控、ESD、基带板级、安卓&UI系统性能测试、专项测试等，输出测试报告及结论，推进测试问题解决；</p>
-                    <p class="text-secondary leading-relaxed">3、参与手机&平板项目全生命测试体系完善，OLED&LCD验收测试标准拉通、策略制定、NUDD分析、用例刷新、测试⽅案拟定、测试报告输出、IPD节点评审报告等，实现项目高效高质交付；</p>
-                    <p class="text-secondary leading-relaxed">4、团队建设，包括测试人员能力培养、测试环境对标、实验室5S管理、设备维保、耗材采购等，保障测试交付能力；</p>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-dark font-medium mb-2">1、主导显示触控测试能力建设</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>包括实验室环境搭建、设备采购、自动化测试工具开发（Python）、验收测试落地等工作，实现从0到1，拓展硬测覆盖度。</li>
+                            <li>获得小米集团23年“青年工程师”荣誉和RSU激励。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">2、负责小米数字系列、红米、Civi项目交付测试端到端看护</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>制定测试计划并执行，覆盖显示效果、光学、可靠性、触控、ESD、基带板级、安卓&UI系统性能测试、专项测试等。</li>
+                            <li>输出测试报告及结论，推进测试问题解决。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">3、参与手机与平板项目全生命测试体系完善</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>OLED&LCD验收测试标准拉通、策略制定、NUDD分析、用例刷新、测试方案拟定、测试报告输出、IPD节点评审报告等，实现项目高效高质交付。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-dark font-medium mb-2">4、团队建设</p>
+                        <ul class="list-disc list-inside space-y-1 text-secondary leading-relaxed">
+                            <li>包括测试人员能力培养、测试环境对标、实验室5S管理、设备维保、耗材采购等，保障测试交付能力。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="p-6 border-t border-slate-100">
@@ -506,6 +582,35 @@
                     document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
+        });
+
+        // 区块滚动淡入
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // 导航当前项高亮
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sectionIds = ['home', 'about', 'education', 'projects', 'contact'];
+        const navObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                const id = entry.target.id;
+                navLinks.forEach(function(link) {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                });
+            });
+        }, { threshold: 0.25, rootMargin: '-30% 0px -45% 0px' });
+        sectionIds.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (el) navObserver.observe(el);
         });
 
         document.getElementById('pmp-cert-link').addEventListener('click', function(e) {
