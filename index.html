@@ -17,7 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        if (window.location.protocol === 'http:') {
+        if (window.location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) {
             window.location.href = window.location.href.replace('http:', 'https:');
         }
         
@@ -61,15 +61,6 @@
             .nav-link.active {
                 color: #14B8A6;
             }
-            .reveal {
-                opacity: 0;
-                transform: translateY(28px);
-                transition: opacity 0.7s ease, transform 0.7s ease;
-            }
-            .reveal.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
             @keyframes fadeIn {
                 from { opacity: 0; }
                 to { opacity: 1; }
@@ -84,6 +75,14 @@
                     transform: translateY(0); 
                 }
             }
+        }
+    </style>
+    <style>
+        html {
+            scroll-padding-top: 5.5rem;
+        }
+        #about, #education, #projects, #contact {
+            scroll-margin-top: 5.5rem;
         }
     </style>
 </head>
@@ -135,7 +134,7 @@
     </section>
 
     <!-- 关于我区域 -->
-    <section id="about" class="py-20 md:py-24 bg-white reveal">
+    <section id="about" class="py-20 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">关于我</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -164,7 +163,7 @@
     </section>
 
     <!-- 教育与认证 -->
-    <section id="education" class="py-20 md:py-24 bg-light reveal">
+    <section id="education" class="py-20 md:py-24 bg-light">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">教育与认证</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -202,15 +201,16 @@
     </section>
 
     <!-- 履历区域 -->
-    <section id="projects" class="py-20 md:py-24 bg-white reveal">
+    <section id="projects" class="py-20 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">我的履历</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <!-- 履历卡片 1：流澜（最近） -->
                 <div class="bg-white rounded-xl border border-slate-200/80 overflow-hidden transition-all-300 hover:border-primary/40 hover:shadow-md">
-                    <div class="h-44 bg-slate-900 flex items-center justify-center p-6">
-                        <img src="上海流澜数智科技有限公司.svg" alt="上海流澜数智" class="max-h-full max-w-full object-contain">
+                    <div class="h-44 bg-slate-900 flex items-center justify-center gap-4 px-6">
+                        <img src="上海流澜数智科技有限公司.svg" alt="上海流澜数智" class="h-24 w-auto object-contain shrink-0">
+                        <span class="text-white text-xl md:text-2xl font-bold tracking-wide font-mono">Current Robotics</span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-1 text-dark">硬件测试负责人</h3>
@@ -279,7 +279,7 @@
     </section>
 
     <!-- 联系方式 -->
-    <section id="contact" class="py-20 md:py-24 bg-light reveal">
+    <section id="contact" class="py-20 md:py-24 bg-light">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">我的联系方式</h2>
             <div class="w-12 h-1 bg-primary mx-auto mb-14 rounded-full"></div>
@@ -330,7 +330,7 @@
     </section>
 
     <!-- PMP证书查看模态框 -->
-    <div id="pmp-modal" class="fixed inset-0 bg-dark/60 z-50 hidden flex items-center justify-center p-4">
+    <div id="pmp-modal" class="fixed inset-0 bg-dark/60 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-3xl w-full max-h-[85vh] overflow-y-auto">
             <div class="p-6 border-b border-slate-100">
                 <div class="flex justify-between items-center">
@@ -352,7 +352,7 @@
     </div>
 
     <!-- 显示技术研发详情模态框 -->
-    <div id="tech-modal" class="fixed inset-0 bg-dark/60 z-50 hidden flex items-center justify-center p-4">
+    <div id="tech-modal" class="fixed inset-0 bg-dark/60 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
             <div class="p-6 border-b border-slate-100">
                 <div class="flex justify-between items-center">
@@ -399,7 +399,7 @@
     </div>
 
     <!-- 医疗器械研发详情模态框 -->
-    <div id="medical-modal" class="fixed inset-0 bg-dark/60 z-50 hidden flex items-center justify-center p-4">
+    <div id="medical-modal" class="fixed inset-0 bg-dark/60 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
             <div class="p-6 border-b border-slate-100">
                 <div class="flex justify-between items-center">
@@ -440,7 +440,7 @@
     </div>
 
     <!-- 智能终端研发测试详情模态框 -->
-    <div id="smart-modal" class="fixed inset-0 bg-dark/60 z-50 hidden flex items-center justify-center p-4">
+    <div id="smart-modal" class="fixed inset-0 bg-dark/60 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
             <div class="p-6 border-b border-slate-100">
                 <div class="flex justify-between items-center">
@@ -489,7 +489,7 @@
     </div>
 
     <!-- 硬件测试负责人详情模态框 -->
-    <div id="liulan-modal" class="fixed inset-0 bg-dark/60 z-50 hidden flex items-center justify-center p-4">
+    <div id="liulan-modal" class="fixed inset-0 bg-dark/60 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
             <div class="p-6 border-b border-slate-100">
                 <div class="flex justify-between items-center">
@@ -576,24 +576,12 @@
                 if (targetElement) {
                     e.preventDefault();
                     window.scrollTo({
-                        top: targetElement.offsetTop - 72,
+                        top: targetElement.offsetTop - 88,
                         behavior: 'smooth'
                     });
                     document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
-        });
-
-        // 区块滚动淡入
-        const revealObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-        document.querySelectorAll('.reveal').forEach(function(el) {
-            revealObserver.observe(el);
         });
 
         // 导航当前项高亮（按滚动位置判断，避免多区块同时相交时误亮）
@@ -616,49 +604,54 @@
         window.addEventListener('resize', updateActiveNav);
         updateActiveNav();
 
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal(modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }
+
         document.getElementById('pmp-cert-link').addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('pmp-modal').classList.remove('hidden');
+            openModal('pmp-modal');
         });
 
         document.getElementById('tech-detail-link').addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('tech-modal').classList.remove('hidden');
+            openModal('tech-modal');
         });
 
         document.getElementById('medical-detail-link').addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('medical-modal').classList.remove('hidden');
+            openModal('medical-modal');
         });
 
         document.getElementById('smart-detail-link').addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('smart-modal').classList.remove('hidden');
+            openModal('smart-modal');
         });
 
         document.getElementById('liulan-detail-link').addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('liulan-modal').classList.remove('hidden');
+            openModal('liulan-modal');
         });
 
-        document.querySelectorAll('.close-modal').forEach(button => {
+        document.querySelectorAll('.close-modal, .close-modal-btn').forEach(button => {
             button.addEventListener('click', function() {
-                const modal = this.closest('.fixed');
-                modal.classList.add('hidden');
+                closeModal(this.closest('[id$="-modal"]'));
             });
         });
 
-        document.querySelectorAll('.close-modal-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const modal = this.closest('.fixed');
-                modal.classList.add('hidden');
-            });
-        });
-
-        document.querySelectorAll('.fixed').forEach(modal => {
+        document.querySelectorAll('[id$="-modal"]').forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
-                    this.classList.add('hidden');
+                    closeModal(this);
                 }
             });
         });
